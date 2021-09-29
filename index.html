@@ -26,7 +26,9 @@
               <option value="min-content">min-content</option>
               <!-- 將寬度變成內容裡面最小單字 -->
               <option value="max-content">max-content</option>
+              <!-- 將寬度變成內容裡面最長句子，會造成溢出 -->
               <option value="fit-content(7em)">fit-content(7em)</option>
+              <!-- 類似 max-content 但是，一旦軌道達到您傳遞給函數的大小，內容就會開始換行。 所以 fit-content(10em) 將創建一個小於 10em 的軌道，如果最大內容大小小於 10em，但永遠不會大於 10em。 -->
             </select>
           </label>
         </div>
