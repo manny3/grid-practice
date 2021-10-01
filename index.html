@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The fr unit</title>
+  <title>Resize columns</title>
   <link rel="stylesheet" href="./gobal.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -11,27 +11,63 @@
   <main>
     <div class="wrapper">
       <article class="flow">
-        <h1>The <code>fr</code> unit</h1>
+        <h1>Repeating fixed size tracks</h1>
         <figure class="callout">
-          <p>In this example the grid container creates a grid with three column tracks of 1fr. Change the value of the final track.</p>
+          <p>In this example there will be as many tracks as will fit into the container with a fixed size of 200px. Resize the editor panel to see the grid change.</p>
+          <p><code>grid-template-columns: repeat(auto-fill, 200px);</code></p>
         </figure>
-        <div class="controls">
-          <label>
-            Choose column size of third track
-            <select id="switcher">
-              <option value="1fr">1fr</option>
-              <option value="2fr">2fr</option>
-              <option value="3fr">3fr</option>
-              <option value="4fr">4fr</option>
-            </select>
-          </label>
-        </div>
+
         <div class="container" id="container">
           <div class="box">Item one</div>
           <div class="box">Item two</div>
-          <div class="box blue">Item three has more text </div>
+          <div class="box">Item three</div>
           <div class="box">Item four</div>
           <div class="box">Item five</div>
+          <div class="box">Item six</div>
+          <div class="box">Item seven</div>
+          <div class="box">Item eight</div>
+        </div>
+      </article>
+
+      <article class="flow">
+        <h1>Auto responsive grid</h1>
+        <figure class="callout">
+          <p>In this example there will be as many tracks as will fit into the container with a minimum size of 200px.</p>
+          <p><code>grid-template-columns: repeat(auto-fill, minmax(200px,1fr));</code></p>
+          <p><strong>Resize the editor panel to see the grid change.</strong></p>
+        </figure>
+  
+        <div class="container2" id="container">
+          <div class="box">Item one</div>
+          <div class="box">Item two</div>
+          <div class="box">Item three</div>
+          <div class="box">Item four</div>
+          <div class="box">Item five</div>
+          <div class="box">Item six</div>
+          <div class="box">Item seven</div>
+          <div class="box">Item eight</div>
+        </div>
+      </article>
+
+      <article class="flow">
+        <h1><code>auto-fill</code> vs <code>auto-fit</code></h1>
+        <figure class="callout">
+          <p>In this example there will be as many tracks as will fit into the container with a minimum size of 100px.</p>
+          <p><code>grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));</code></p>
+        <p>Change between auto-fill and auto-fit keywords to see the difference when our first row is not filled with items.</p>
+        </figure>
+        <div class="controls">
+          <label>
+            Choose column size
+            <select id="switcher">
+              <option value="auto-fill">auto-fill</option>
+              <option value="auto-fit">auto-fit</option>
+            </select>
+          </label>
+        </div>
+        <div class="container3" id="container">
+          <div class="box">Item one</div>
+          <div class="box">Item two Item two Item two</div>
         </div>
       </article>
     </div>

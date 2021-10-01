@@ -1,20 +1,36 @@
 :root {
   --var-col: 1fr;
+  --var-repeat: auto-fill;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr var(--var-col);
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 10px;
+  background-color: var(--color-stroke);
+  padding: 1em;
+  max-width: 70rem;
+}
+
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 10px;
+  background-color: var(--color-stroke);
+  padding: 1em;
+  max-width: 70rem;
+}
+
+.container3 {
+  display: grid;
+  grid-template-columns: repeat(var(--var-repeat), minmax(100px, 1fr));
   grid-template-rows: 200px auto;
   gap: 10px;
   background-color: var(--color-stroke);
   padding: 1em;
-  max-width: 30rem;
+  max-width: 70rem;
 }
 
 select {
   min-width: unset;
-}
-.box.blue {
-  background-color: var(--color-primary-x-light);
 }
