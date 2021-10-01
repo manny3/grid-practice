@@ -1,29 +1,13 @@
 :root {
-  --var-flow: row;
-  --var-mode: horizontal-tb;
+  --var-direction: 'ltr';
+  --var-writing-mode: 'horizontal-tb';
+  --var-z-index: 0;
 }
 
 .container {
-  writing-mode: var(--var-mode);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(2,minmax(100px, auto));
-  grid-auto-flow: var(--var-flow);
-  gap: 10px;
-  background-color: var(--color-stroke);
-  padding: 1em;
-  max-width: 30rem;
-}
-
-label {
-  --flow-space: 1rem;
-  display: grid;
-  grid-template-columns: 180px min-content;
-  gap: 0.2rem;
-}
-
-.container2 {
-  display: grid;
+  direction: var(--var-direction);
+  writing-mode: var(--var-writing-mode);
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: minmax(100px, auto);
   grid-auto-flow: var(--var-packing);
@@ -39,4 +23,56 @@ label {
 
 .span-col {
   grid-column: auto / span 2;
+}
+
+.controls > * + * {
+  margin-top: 1rem;
+}
+
+
+
+.container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-auto-flow: var(--var-packing);
+  gap: 10px;
+  background-color: #dadce0;
+  padding: .5em;
+  border-radius: 3px;
+  max-inline-size: 500px;
+}
+
+.box2 {
+  z-index: 0;
+}
+
+.box2:nth-child(1) {
+  grid-row: 1 / 4;
+  grid-column: 1;
+  z-index: var(--var-z-index);
+}
+
+.box2:nth-child(2) {
+  grid-row: 1 / 3;
+  grid-column: 1 / -1;
+}
+/* 負數表示倒數第一條 */
+.box2:nth-child(3) {
+  grid-row: 2 / 4;
+  grid-column: 2 / -1;
+}
+
+.container3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 10px;
+  background-color: #dadce0;
+  padding: .5em;
+  border-radius: 3px;
+  max-width: 1200px;
+}
+
+.container3 > .sb {
+  grid-row: 1 / -1;
 }

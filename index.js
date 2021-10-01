@@ -1,21 +1,25 @@
-let switcher = document.getElementById("switcher");
-let switcher2 = document.getElementById("switcher2");
 let root = document.documentElement;
+let switcher = document.getElementById("switcher");
+let direction = document.getElementById("direction");
 
 switcher.addEventListener("change", function (evt) {
-   root.style.setProperty('--var-flow', evt.target.value);
+  root.style.setProperty('--var-writing-mode', evt.target.value);
 });
 
-switcher2.addEventListener("change", function (evt) {
-   root.style.setProperty('--var-mode', evt.target.value);
-});
-
-
-let packing = document.getElementById("gridPacking");
-packing.addEventListener("click", function (evt) {
-  if(packing.checked) {
-    root.style.setProperty('--var-packing', 'row dense');
+direction.addEventListener("click", function (evt) {
+  if(direction.checked) {
+    root.style.setProperty('--var-direction', 'rtl');
   } else {
-    root.style.setProperty('--var-packing', 'row');
+    root.style.setProperty('--var-direction', 'ltr');
+  }
+});
+
+
+let zIndex = document.getElementById("z-index");
+zIndex.addEventListener("click", function (evt) {
+  if(zIndex.checked) {
+    root.style.setProperty('--var-z-index', 2);
+  } else {
+    root.style.setProperty('--var-z-index', 0);
   }
 });
