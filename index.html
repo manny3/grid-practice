@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resize columns</title>
+  <title>grid-template-areas</title>
   <link rel="stylesheet" href="./gobal.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -11,7 +11,7 @@
   <main>
     <div class="wrapper">
       <article class="flow">
-        <h1>Direction of grid lines</h1>
+        <h1>Layout with grid-template-areas</h1>
         <figure class="callout">
           <p>Change the direction and writing mode to see the layout change.</p>
         </figure>
@@ -32,63 +32,70 @@
             </div>
           </label>
         </div>
+        <!-- 
+          使用 grid-area 屬性為網格容器的直接子級命名(除了關鍵字 auto 和 span 之外命名)
+          
+          使用 grid-template-areas 時有一些規則。
+          該值必須是一個完整的網格，沒有空單元格
+          要跨越軌道重複名稱
+          重複名稱創建的區域必須是矩形的，不能斷開連接。
+
+          網格上留下空白，請使用 .
+        -->
         <div class="container" id="container">
-          <div class="box span-row">Item one</div>
-          <div class="box">Item two</div>
-          <div class="box span-col">Item three has more text </div>
-          <div class="box">Item four</div>
-          <div class="box">Item five</div>
+          <div class="box item1">grid-area: header</div>
+          <div class="box item2">grid-area: sidebar</div>
+          <div class="box item3">grid-area: content</div>
+          <div class="box item4">grid-area: footer;</div>
+        </div>
+        <!-- grid-template 屬性是 grid-template-rows、grid-template-columns 和 grid-template-areas 的簡寫。 首先定義行以及 grid-template-areas 的值。 在 / 之後添加列大小。 -->
+        <div class="container2" id="container">
+          <div class="box item1">grid-area: header</div>
+          <div class="box item2">grid-area: sidebar</div>
+          <div class="box item3">grid-area: content</div>
+          <div class="box item4">grid-area: footer;</div>
         </div>
       </article>
 
-      <article class="flow">
-        <h1>Grid stacking and <code>z-index</code></h1>
+      <!-- <article class="flow">
+        <h1>Extra space in the grid container</h1>
         <figure class="callout">
-          <p>Toggle item one’s <code>z-index</code> to see how it affects stacking.</p>
+          <p>The <code>align-content</code> property distributes space in the block direction. The <code>justify-content</code> property in the inline direction.</p>
         </figure>
         <div class="controls">
-  
-          <label class="toggle" for="z-index">
-            <span class="toggle__label">Switch “item one” to have a <code>z-index</code> of 2</span>
-            <input type="checkbox" role="switch" class="toggle__element" id="z-index">
-            <div class="toggle__decor" aria-hidden="true">
-              <div class="toggle__thumb"></div>
-            </div>
+          <label>
+            Choose aligment
+            <select id="switcher3">
+              <option value="stretch">stretch</option>
+              <option value="start">start</option>
+              <option value="end">end</option>
+              <option value="center">center</option>
+              <option value="space-between">space-between</option>
+              <option value="space-around">space-around</option>
+              <option value="space-evenly">space-evenly</option>
+            </select>
+          </label>
+          <label>
+            Choose justification
+            <select id="switcher4">
+              <option value="stretch">stretch</option>
+              <option value="start">start</option>
+              <option value="end">end</option>
+              <option value="center">center</option>
+              <option value="space-between">space-between</option>
+              <option value="space-around">space-around</option>
+              <option value="space-evenly">space-evenly</option>
+            </select>
           </label>
         </div>
-        <div class="container2" id="container">
-  
-          <div class="box box2 bg-primary color-light">Item one</div>
-          <div class="box box2">Item two</div>
-          <div class="box box2">Item three has more text </div>
-          <div class="box box2">Item four</div>
-          <div class="box box2">Item five</div>
-        </div>
-      </article>
-
-      <article class="flow">
-        <h1>Negative line numbers and the implicit grid</h1>
-        <figure class="callout">
-          <p>The sidebar is set to <code>grid-row: 1 / -1;</code> as the row tracks are in the implicit grid it cannot stretch to the final line.</p>
-        </figure>
-        <!--  
-          明式格線(Explicit grid)
-          需清楚定義整個 container 具有多少行以及多少列，可客製化每個網格的寬高 grid-template-columns/grid-template-rows 屬於此類。
-
-          暗式格線(Implicit grid)
-          無需清楚定義整個 container 具有多少行以及多少列，無法客製化每個網格的寬高 grid-auto-columns/grid-auto-rows 屬於此類。
-          
-          若沒有定義清楚如下方範例無法將.sb做延伸
-        -->
         <div class="container3" id="container">
-          <div class="box sb bg-primary color-light">Sidebar</div>
-          <div class="box">Item one</div>
-          <div class="box">Item two</div>
-          <div class="box">Item three has more text</div>
-          <div class="box">Item four</div>
-          <div class="box">Item five</div>
+          <div class="box box3">Item one</div>
+          <div class="box box3">Item two</div>
+          <div class="box box3">Item three</div>
+          <div class="box box3">Item four</div>
+          <div class="box box3">Item five</div>
         </div>
-      </article>
+      </article> -->
     </div>
   </main>
 

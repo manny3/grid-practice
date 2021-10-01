@@ -15,11 +15,12 @@ direction.addEventListener("click", function (evt) {
 });
 
 
-let zIndex = document.getElementById("z-index");
-zIndex.addEventListener("click", function (evt) {
-  if(zIndex.checked) {
-    root.style.setProperty('--var-z-index', 2);
-  } else {
-    root.style.setProperty('--var-z-index', 0);
-  }
-});
+// let switcher3= document.getElementById("switcher3");
+// switcher3.addEventListener("change", function (evt) {
+//   root.style.setProperty('--var-align-content', evt.target.value);
+// });
+
+// let switcher4= document.getElementById("switcher4");
+// switcher4.addEventListener("change", function (evt) {
+//   root.style.setProperty('--var-justify-content', evt.target.value);
+// });
